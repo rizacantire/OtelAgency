@@ -29,7 +29,7 @@ public class Otel {
     private int star;
 
     @ManyToOne
-    @JoinColumn(name = "otel_types_id")
+    @JoinColumn(name = "otel_type_id")
     private OtelType otelType;
 
     @ManyToMany
