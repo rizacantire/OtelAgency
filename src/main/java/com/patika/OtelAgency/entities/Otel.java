@@ -1,6 +1,7 @@
 package com.patika.OtelAgency.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.patika.OtelAgency.dataAccess.abstracts.OtelDao;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,8 @@ public class Otel {
     private String phone;
     private int star;
 
+
+
     @ManyToOne
     @JoinColumn(name = "otel_type_id")
     private OtelType otelType;
@@ -35,4 +38,8 @@ public class Otel {
     @ManyToMany
     @JoinColumn(name = "property_id")
     private Set<Property> otelProperties;
+
+    @ManyToMany
+    @JsonIgnore
+    private List<Room> otelRooms;
 }

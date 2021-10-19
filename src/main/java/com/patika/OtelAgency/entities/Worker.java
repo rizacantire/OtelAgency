@@ -10,17 +10,14 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "worker")
+public class Worker extends User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String firstName;
+    private String type;
 
-    private String lastName;
-
-    private String mail;
 
 }

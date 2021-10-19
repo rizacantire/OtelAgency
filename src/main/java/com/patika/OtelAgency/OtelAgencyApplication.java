@@ -22,9 +22,6 @@ public class OtelAgencyApplication {
 		//SpringApplication.run(OtelAgencyApplication.class, args);
 
 
-
-
-
 		ConfigurableApplicationContext context = new SpringApplicationBuilder(OtelAgencyApplication.class).headless(false).run(args);
 		OtelGUI otelGui = context.getBean(OtelGUI.class);
 		Helper.setLayout();

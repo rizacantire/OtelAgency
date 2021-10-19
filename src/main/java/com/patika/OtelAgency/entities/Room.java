@@ -1,10 +1,12 @@
 package com.patika.OtelAgency.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -31,9 +33,15 @@ public class Room {
 
     private boolean safeCase;
 
+    private int numberOfRoom;
+
     @ManyToOne
     @JoinColumn(name = "room_type_id")
-
     private RoomType roomType;
+
+    @ManyToMany
+    @JoinColumn(name = "otel_id")
+    @JsonIgnore
+    private List<Otel> otels;
 
 }
