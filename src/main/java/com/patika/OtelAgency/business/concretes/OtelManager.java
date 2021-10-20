@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 public class OtelManager implements OtelService {
 
+
     @Autowired
     private OtelDao otelDao;
     public OtelManager(OtelDao otelDao){
@@ -35,6 +36,5 @@ public class OtelManager implements OtelService {
         var otelList = this.otelDao.findAll();
         return otelList;
     }
-
 
 }
