@@ -19,6 +19,10 @@ import java.util.Set;
 @Data
 @Table(name = "property")
 public class Property  {
+    public Property(int id, String property) {
+        this.id = id;
+        this.property = property;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +31,6 @@ public class Property  {
     private String property;
 
     @ManyToMany
-    //@JoinColumn(name = "otel_id")
     @JsonIgnore
     private List<Otel> otels;
 
